@@ -35,9 +35,9 @@ define([
 
             var imagesIds = [];
             while (imagesIds.length < 6) {
-                var randomInt = _.random(1, 6);
+                var randomInt = 10  + _.random(1, 6);
                 if (imagesIds.length >= 3) {
-                    randomInt += 10 * randomInt
+                    randomInt = 10 + randomInt
                 }
                 if (_.indexOf(imagesIds, randomInt) < 0) {
                     imagesIds.push(randomInt);
@@ -46,7 +46,7 @@ define([
             this.$.images = _.chain(imagesIds).shuffle().map(function(imageName) {
                 return {
                     id: imageName,
-                    url: checkPoint.imagesPath + imageName + '.png'
+                    url: checkPoint.imagesPath + imageName + '.jpg'
                 };
             }).value();
         },
