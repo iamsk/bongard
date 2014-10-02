@@ -28,6 +28,9 @@ define([
 
         _initCurrentLevel: function() {
             var checkPoint = this._checkPointsData.checkPoints[this.$.currentCheckPointLevel];
+            if (!checkPoint) {
+                return;
+            }
             this.$.author = checkPoint.author;
 
             var imagesIds = [];
