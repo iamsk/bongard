@@ -2,6 +2,7 @@
   "name": "wedia.finance",
   "version": "0.0.1",
   "dependencies": {
+    "bootstrap": "~3.2.0",
     "requirejs": "~2.1.14",
     "lodash": "~2.4.1",
     "moment": "~2.8.0",
@@ -12,6 +13,7 @@
     "angular-gettext": "~1.1.2",
     "restangular": "~1.4.0",
     "angulartics": "~0.16.1",
-    "requirejs-text": "~2.0.12"
+    "requirejs-text": "~2.0.12",
+    "angular-local-storage": "~0.0.7"
   }
 }

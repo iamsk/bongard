@@ -1,18 +1,18 @@
 define([
-    'app'
+    'app',
+    'text!data/gameInfo.json'
 ], function(
-    module
+    module,
+    gameInfo
 ) {
-    var nodeName = 'home';
-
-
     return {
         name: 'HomeCtrl',
 
-        inject: ['$scope', '$state'],
+        inject: ['$scope', '$state', 'localStorageService'],
 
         init: function() {
-            
+            this.$.gameInfo = angular.fromJson(gameInfo);
+            this.$.gameStatus = this._gameStatus = angular.fromJson(this.localStorageService.get('gameStatus')) || {};
         }
     };
 });

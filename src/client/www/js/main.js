@@ -10,7 +10,8 @@ require.config({
         'restangular': '../bower_components/restangular/dist/restangular.min',
         // 'angular.animate': '../bower_components/angular-animate/angular-animate.min',
         'angular.gettext': '../bower_components/angular-gettext/dist/angular-gettext.min',
-        'angulartics.ga': '../bower_components/angulartics/dist/angulartics-ga.min'
+        'angulartics.ga': '../bower_components/angulartics/dist/angulartics-ga.min',
+        'angular.local.storage': '../bower_components/angular-local-storage/angular-local-storage.min'
     },
     shim: {
         'angular': {
@@ -21,7 +22,8 @@ require.config({
         'restangular': ['angular', 'lodash'],
         // 'angular.animate': ['angular'],
         'angular.gettext': ['angular'],
-        'angulartics.ga': ['angulartics']
+        'angulartics.ga': ['angulartics'],
+        'angular.local.storage': ['angular']
     }
 });
 

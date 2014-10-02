@@ -1,1 +1,10 @@
-<h1>home</h1>
+<ul ng-controller="HomeCtrl" class="home list-inline">
+    <li ng-repeat="checkPointType in gameInfo.checkPointTypes">
+        <a ui-sref="checkPoint({type: checkPointType.name})" class="btn btn-lg text-capitalize" ng-class="{'btn-success': checkPointType.name ==='simple', 'btn-info': checkPointType.name ==='medium', 'btn-danger': checkPointType.name ==='senior'}">
+            {{checkPointType.name}}
+            <div ng-if="gameStatus[checkPointType.name] === checkPointType.checkPoints.length" class="">
+                <small>Done!</small>
+            </div>
+        </a>
+    </li>
+</ul>

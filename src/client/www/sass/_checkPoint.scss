@@ -1,0 +1,12 @@
+.check-point {
+    .images-container {
+        img {
+            border: solid 2px white;
+        }
+        .selected {
+            img {
+                border: solid 2px #009;
+            }
+        }
+    }
+}

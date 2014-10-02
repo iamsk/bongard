@@ -7,7 +7,8 @@ define([
         'ui.router',
         'classy',
         'restangular',
-        'gettext'
+        'gettext',
+        'LocalStorageModule'
     ]).config(['$compileProvider',
         function($compileProvider) {
             // please refer to the angular source code about $$SanitizeUriProvider part.
@@ -16,30 +17,34 @@ define([
             // $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|file|ms-appx):|data:image\//);
         }
     ]).run(function(Restangular) {
-        
-    }).factory('snsApi', function(Restangular) {
-        return Restangular.withConfig(function(RestangularConfigurer) {
-            RestangularConfigurer.setBaseUrl('/index/sns/api');
-        });
+
     });
 
     require([
         './home/homeCtrl',
-        'text!./home/homeTpl.html'
+        'text!./home/homeTpl.html',
+        './checkPoint/checkPointCtrl',
+        'text!./checkPoint/checkPointTpl.html'
     ], function(
         homeCtrl,
-        homeTpl
+        homeTpl,
+        checkPointCtrl,
+        checkPointTpl
     ) {
         module.classy.controllers([
-            homeCtrl
+            homeCtrl,
+            checkPointCtrl
         ]).config(['$stateProvider', '$urlRouterProvider',
             function($stateProvider, $urlRouterProvider) {
                 // $urlRouterProvider.otherwise('');
 
                 $stateProvider.state('home', {
-                    url: '',
+                    url: '/home',
                     template: homeTpl
-                });
+                }).state('checkPoint', {
+                    url: "/checkPoint/:type",
+                    template: checkPointTpl
+                });;
             }
         ]);
 

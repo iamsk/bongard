@@ -1,0 +1,35 @@
+{
+    "version": "0.1.0",
+    "checkPointTypes": [{
+            "name": "simple",
+            "checkPoints": [{
+                    "author": "Bongard",
+                    "imagesPath": "./image/simple/1/"
+                }, {
+                    "author": "Bongard1",
+                    "imagesPath": "./image/simple/1/"
+                }
+            ]
+        }, {
+            "name": "medium",
+            "checkPoints": [{
+                    "author": "Bongard",
+                    "imagesPath": "./image/simple/1/"
+                }, {
+                    "author": "Bongard1",
+                    "imagesPath": "./image/simple/1/"
+                }
+            ]
+        }, {
+            "name": "senior",
+            "checkPoints": [{
+                    "author": "Bongard",
+                    "imagesPath": "./image/simple/1/"
+                }, {
+                    "author": "Bongard1",
+                    "imagesPath": "./image/simple/1/"
+                }
+            ]
+        }
+    ]
+}
