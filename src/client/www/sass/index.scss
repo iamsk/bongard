@@ -1,5 +1,11 @@
 @import "CSS:../bower_components/ionic/release/css/ionic.min";
 
+.popup-container .popup {
+    border-radius: 10px;
+    .popup-header {
+        border-bottom: solid 1px #ccc;
+    }
+}
 body {
     // width: 720px;
     // margin: 20px auto;

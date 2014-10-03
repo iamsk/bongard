@@ -1,29 +1,31 @@
-<ion-view title="Bongard - Select 3 of them" class="check-point">
-    <ion-content ng-controller="CheckPointCtrl" class="padding">
+<ion-view title="Bongard">
+    <ion-content ng-controller="CheckPointCtrl" class="padding check-point">
         <div ng-show="currentCheckPointLevel === checkPointLevelsCount">
             You already passed all of the check points!
         </div>
         <div ng-show="currentCheckPointLevel < checkPointLevelsCount">
-            <div class="clearfix">
-                <div class="pull-right">
-                    <button type="button" class="btn btn-success" ng-click="showToolTip()">Tooltip</button>
-                </div>
+            <div class="info">
                 <div>
-                    <div class="text-primary">
-                        Author: <strong class="author">{{author}}</strong>, Level: <strong class="current-level">{{currentCheckPointLevel + 1}}</strong> / Total: <strong class="total-level">{{checkPointLevelsCount}}</strong>
-                    </div>
-                    <div ng-class="{'text-success': leftChances === 3, 'text-warning': leftChances === 2, 'text-danger': leftChances === 1}">
-                        You have {{leftChances}} chances left to continue.
-                    </div>
+                    Author: <strong class="author">{{author}}</strong>, Level: <strong class="current-level">{{currentCheckPointLevel + 1}}</strong> / Total: <strong class="total-level">{{checkPointLevelsCount}}</strong>
                 </div>
+            </div>
+            <div class="actions">
+                <button class="button button-small button-positive" ng-click="showToolTip()">Tooltip</button>
+                <button class="button button-small button-energized button-confirm" ng-class="{disabled: !canConfirm()}" ng-click="confirm()">Confirm</button>
             </div>
             <div class="images-container">
                 <button class="button" ng-repeat="image in images" ng-click="(isClickable() || image.selected) && (image.selected = !image.selected)" ng-class="{selected: image.selected}">
                     <img ng-src="{{image.url}}" />
                 </button>
             </div>
-            <div class="footer">
-                <button type="button" class="btn btn-primary pull-right" ng-class="{disabled: !canConfirm()}" ng-click="confirm()">Confirm</button>
+            <div class="description">
+                Select 3 of them with the same pattern
+            </div>
+            <div class="left-chances" ng-class="{'text-safe': leftChances === 3, 'text-warning': leftChances === 2, 'text-danger': leftChances === 1}">
+                You have {{leftChances}} chances left to continue.
+            </div>
+            <div class="achieved">
+                <a class="button button-small button-block button-stable">See what you have achieved</a>
             </div>
         </div>
     </ion-content>

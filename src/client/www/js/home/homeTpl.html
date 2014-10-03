@@ -8,7 +8,7 @@
                 <small>Done!</small>
             </div>
             <div ng-if="(gameStatus[checkPointType.name] || 0) < checkPointType.checkPoints.length">
-                <small>Level: {{gameStatus[checkPointType.name] || 0}} / Total: {{checkPointType.checkPoints.length}}</small>
+                <small>Level: {{(gameStatus[checkPointType.name] || 0) + 1}} / Total: {{checkPointType.checkPoints.length}}</small>
             </div>
         </a>
     </ion-content>

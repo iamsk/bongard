@@ -1,25 +1,61 @@
 .check-point {
-    .author {
-        font-size: 15px;
-        color: #552bdf;
+    padding: 10px 20px;
+    .info {
+        padding-left: 2%;
+        .author {
+            font-size: 15px;
+            color: #552bdf;
+        }
+        .current-level, .total-level {
+            color: #552bdf;
+            font-size: 15px;
+        }
     }
-    .current-level, .total-level {
-        color: #552bdf;
-        font-size: 15px;
-    }
+    
     .images-container {
         .button {
-            height: 106px;
+            height: 96px;
             width: 46%;
-            margin: 1.8%;
-            padding: 5px 0;
+            margin: 2%;
             background-color: white;
             border-radius: 5px;
             border: 2px solid #ccc;
             &.selected {
                 border: 2px solid #552bdf;
             }
+        }   
+    }
+    .actions {
+        padding: 1% 2%;
+        .button {
+            width: 48%;
+            padding: 1% 10%;
         }
-        
+        .button-confirm {
+            float: right;
+        }
+    }
+    .description {
+        text-align: center;
+        color: #552bdf;
+    }
+    .left-chances {
+        text-align: center;
+
+        &.text-safe {
+            color: #498f24;
+        }
+        &.text-warning {
+            color: #d39211;
+        }
+        &.text-danger {
+            color: #cc2311;
+            font-weight: bold;
+        }
+    }
+    .achieved {
+        .button {
+            margin: 0 2%;
+        }
     }
 }

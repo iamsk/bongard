@@ -64,6 +64,13 @@ define([
                             template: checkPointTpl
                         }
                     }
+                }).state('tabs.archieved', {
+                    url: "/archieved:type/",
+                    views: {
+                        home: {
+                            template: checkPointTpl
+                        }
+                    }
                 }).state('tabs.about', {
                     url: '/about',
                     views: {

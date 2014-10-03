@@ -14,7 +14,7 @@ require.config({
         'angular.santitize': '../bower_components/angular-sanitize/angular-sanitize.min',
         'angular.gettext': '../bower_components/angular-gettext/dist/angular-gettext.min',
         'angulartics.ga': '../bower_components/angulartics/dist/angulartics-ga.min',
-        'angular.local.storage': '../bower_components/angular-local-storage/angular-local-storage.min'
+        'angular.local.storage': '../bower_components/angular-local-storage/dist/angular-local-storage.min'
     },
     shim: {
         'angular': {
@@ -23,6 +23,7 @@ require.config({
         'angular.ui.router': ['angular'],
         'angular.classy': ['angular'],
         'restangular': ['angular', 'lodash'],
+        'ionic': ['angular'],
         'angular.ionic': ['angular', 'ionic'],
         'angular.santitize': ['angular'],
         'angular.animate': ['angular'],

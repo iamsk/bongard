@@ -11476,6 +11476,15 @@ a.button .icon:before, a.button.icon-left:before, a.button.icon-right:before, a.
   transition: none !important;
 }
 
+/* line 3, ../sass/index.scss */
+.popup-container .popup {
+  border-radius: 10px;
+}
+/* line 5, ../sass/index.scss */
+.popup-container .popup .popup-header {
+  border-bottom: solid 1px #ccc;
+}
+
 /* line 3, ../sass/_home.scss */
 .home .button .title {
   font-size: 25px;
@@ -11488,27 +11497,73 @@ a.button .icon:before, a.button.icon-left:before, a.button.icon-right:before, a.
   line-height: 40px;
 }
 
-/* line 2, ../sass/_checkPoint.scss */
-.check-point .author {
+/* line 1, ../sass/_checkPoint.scss */
+.check-point {
+  padding: 10px 20px;
+}
+/* line 3, ../sass/_checkPoint.scss */
+.check-point .info {
+  padding-left: 2%;
+}
+/* line 5, ../sass/_checkPoint.scss */
+.check-point .info .author {
   font-size: 15px;
   color: #552bdf;
 }
-/* line 6, ../sass/_checkPoint.scss */
-.check-point .current-level, .check-point .total-level {
+/* line 9, ../sass/_checkPoint.scss */
+.check-point .info .current-level, .check-point .info .total-level {
   color: #552bdf;
   font-size: 15px;
 }
-/* line 11, ../sass/_checkPoint.scss */
+/* line 16, ../sass/_checkPoint.scss */
 .check-point .images-container .button {
-  height: 106px;
+  height: 96px;
   width: 46%;
-  margin: 1.8%;
-  padding: 5px 0;
+  margin: 2%;
   background-color: white;
   border-radius: 5px;
   border: 2px solid #ccc;
 }
-/* line 19, ../sass/_checkPoint.scss */
+/* line 23, ../sass/_checkPoint.scss */
 .check-point .images-container .button.selected {
   border: 2px solid #552bdf;
+}
+/* line 28, ../sass/_checkPoint.scss */
+.check-point .actions {
+  padding: 1% 2%;
+}
+/* line 30, ../sass/_checkPoint.scss */
+.check-point .actions .button {
+  width: 48%;
+  padding: 1% 10%;
+}
+/* line 34, ../sass/_checkPoint.scss */
+.check-point .actions .button-confirm {
+  float: right;
+}
+/* line 38, ../sass/_checkPoint.scss */
+.check-point .description {
+  text-align: center;
+  color: #552bdf;
+}
+/* line 42, ../sass/_checkPoint.scss */
+.check-point .left-chances {
+  text-align: center;
+}
+/* line 45, ../sass/_checkPoint.scss */
+.check-point .left-chances.text-safe {
+  color: #498f24;
+}
+/* line 48, ../sass/_checkPoint.scss */
+.check-point .left-chances.text-warning {
+  color: #d39211;
+}
+/* line 51, ../sass/_checkPoint.scss */
+.check-point .left-chances.text-danger {
+  color: #cc2311;
+  font-weight: bold;
+}
+/* line 57, ../sass/_checkPoint.scss */
+.check-point .achieved .button {
+  margin: 0 2%;
 }

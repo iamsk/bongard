@@ -8,7 +8,7 @@ define([
     return {
         name: 'CheckPointCtrl',
 
-        inject: ['$scope', '$state', '$stateParams', 'localStorageService'],
+        inject: ['$scope', '$state', '$stateParams', 'localStorageService', '$ionicPopup'],
 
         init: function() {
             this._checkpPointType = this.$stateParams.type;
@@ -36,9 +36,9 @@ define([
 
             var imagesIds = [];
             while (imagesIds.length < 6) {
-                var randomInt = 10  + _.random(1, 6);
+                var randomInt = 10 + _.random(1, 6);
                 if (imagesIds.length >= 3) {
-                    randomInt = 10 + randomInt
+                    randomInt += 10
                 }
                 if (_.indexOf(imagesIds, randomInt) < 0) {
                     imagesIds.push(randomInt);
@@ -63,7 +63,7 @@ define([
                 image.selected = false;
             });
             _.chain(this.$.images).filter(function(image) {
-                return image.id < 10;
+                return image.id < 20;
             }).slice(0, 2).forEach(function(image) {
                 image.selected = true;
             });
@@ -79,13 +79,24 @@ define([
             var selectedImageIds = _.chain(this.$.images).filter({
                 selected: true
             }).pluck('id').sortBy().value();
-            var isAnswerRight = !(_.last(selectedImageIds) > 10 && _.first(selectedImageIds) < 10);
+            var isAnswerRight = !(_.last(selectedImageIds) > 20 && _.first(selectedImageIds) < 20);
             if (isAnswerRight) {
                 this._nextLevel();
             } else {
                 this.$.leftChances--;
+                var self = this;
                 if (this.$.leftChances === 0) {
-
+                    this.$ionicPopup.alert({
+                        title: 'Advertisment',
+                        template: 'You have to see an ad before continue as your punishment ^_^ <br /> This is an ad!'
+                    }).then(function() {
+                        self.$.leftChances++;
+                    });
+                } else {
+                    this.$ionicPopup.alert({
+                        title: 'Left Chances',
+                        template: 'You get only ' + this.$.leftChances + ' chances left for this step. Otherwise you have to see an ad. ^_^'
+                    });
                 }
             }
         },
@@ -94,7 +105,7 @@ define([
             if (this.$.currentCheckPointLevel === this._checkPointsData.checkPoints.length) {
                 alert("you win");
             } else {
-                this._gameStatus[this._checkpPointType] = ++this.$.currentCheckPointLevel;
+                this._gameStatus[this._checkpPointType] = this.$.currentCheckPointLevel++;
                 this.localStorageService.set('gameStatus', angular.toJson(this._gameStatus));
 
                 this._initCurrentLevel();
