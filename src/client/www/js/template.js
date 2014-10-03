@@ -16,7 +16,7 @@ angular.module('mySales.template', []).run(['$templateCache', function($template
   );
 
 
-  $templateCache.put('js/contactTpl.html',
+  $templateCache.put('js/howToTpl.html',
     "<ion-view title=Contact class=about><ion-content class=padding><h1>Contact</h1></ion-content></ion-view>"
   );
 

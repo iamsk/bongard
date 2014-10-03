@@ -25,7 +25,7 @@ define([
         './appCtrl',
         'text!./tabsTpl.html',
         'text!./aboutTpl.html',
-        'text!./contactTpl.html',
+        'text!./howToTpl.html',
 
         './home/homeCtrl',
         'text!./home/homeTpl.html',
@@ -37,7 +37,7 @@ define([
         appCtrl,
         tabsTpl,
         aboutTpl,
-        contactTpl,
+        howToTpl,
 
         homeCtrl,
         homeTpl,
@@ -93,7 +93,7 @@ define([
                     url: '/contact',
                     views: {
                         contact: {
-                            template: contactTpl
+                            template: howToTpl
                         }
                     }
                 });
