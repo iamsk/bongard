@@ -1,7 +1,13 @@
 .home {
-    .btn {
-        height: 200px;
-        width: 200px;
-        display: table-cell;
+    .button {
+        .title {
+            font-size: 25px;
+            line-height: 33px;
+            text-transform: capitalize;
+            margin-top: 25px;
+        }
+        .description {
+            line-height: 40px;
+        }
     }
 }

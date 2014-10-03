@@ -35,7 +35,7 @@ module.exports = function(grunt) {
                     expand: true,
                     flatten: true,
                     cwd: __dirname,
-                    src: ['<%= appFolder %>/bower_components/bootstrap/dist/fonts/*', '<%= appFolder %>/bower_components/fontawesome/fonts/*'],
+                    src: ['<%= appFolder %>/bower_components/ionic/release/fonts/*'],
                     dest: '<%= appFolder %>/fonts/'
                 }]
             },

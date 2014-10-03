@@ -8,10 +8,12 @@ define([
     'angular',
     'angular.ui.router',
     'angular.classy',
+    'angular.ionic',
     'angular.gettext',
     'angular.local.storage',
+    'angular.animate',
+    'angular.santitize',
     'restangular'
-    // 'angular.animate',
 ], function (
     require
 ) {

@@ -8,7 +8,8 @@ define([
         'classy',
         'restangular',
         'gettext',
-        'LocalStorageModule'
+        'LocalStorageModule',
+        'ionic'
     ]).config(['$compileProvider',
         function($compileProvider) {
             // please refer to the angular source code about $$SanitizeUriProvider part.
@@ -21,11 +22,19 @@ define([
     });
 
     require([
+        'text!./tabsTpl.html',
+        'text!./aboutTpl.html',
+        'text!./contactTpl.html',
+
         './home/homeCtrl',
         'text!./home/homeTpl.html',
         './checkPoint/checkPointCtrl',
         'text!./checkPoint/checkPointTpl.html'
     ], function(
+        tabsTpl,
+        aboutTpl,
+        contactTpl,
+
         homeCtrl,
         homeTpl,
         checkPointCtrl,
@@ -36,15 +45,40 @@ define([
             checkPointCtrl
         ]).config(['$stateProvider', '$urlRouterProvider',
             function($stateProvider, $urlRouterProvider) {
-                // $urlRouterProvider.otherwise('');
+                $urlRouterProvider.otherwise('/home');
 
-                $stateProvider.state('home', {
+                $stateProvider.state('tabs', {
+                    abstract: true,
+                    template: tabsTpl
+                }).state('tabs.home', {
                     url: '/home',
-                    template: homeTpl
-                }).state('checkPoint', {
+                    views: {
+                        home: {
+                            template: homeTpl
+                        }
+                    }
+                }).state('tabs.checkPoint', {
                     url: "/checkPoint/:type",
-                    template: checkPointTpl
-                });;
+                    views: {
+                        home: {
+                            template: checkPointTpl
+                        }
+                    }
+                }).state('tabs.about', {
+                    url: '/about',
+                    views: {
+                        about: {
+                            template: aboutTpl
+                        }
+                    }
+                }).state('tabs.contact', {
+                    url: '/contact',
+                    views: {
+                        contact: {
+                            template: contactTpl
+                        }
+                    }
+                });
             }
         ]);
 

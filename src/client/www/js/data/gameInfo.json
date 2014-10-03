@@ -30,6 +30,16 @@
                     "imagesPath": "./image/simple/1/"
                 }
             ]
+        }, {
+            "name": "BT",
+            "checkPoints": [{
+                    "author": "Bongard",
+                    "imagesPath": "./image/simple/1/"
+                }, {
+                    "author": "Bongard1",
+                    "imagesPath": "./image/simple/1/"
+                }
+            ]
         }
     ]
 }

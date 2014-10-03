@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>bondgard</title>
-    <link rel="stylesheet" href="./css/index.css">
-  </head>
-  <body>
-    <div class="content">
-      <div ui-view></div>
-    </div>
-    <script type="text/javascript" src="./bower_components/requirejs/require.js" data-main="./js/main.js"></script>
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>bondgard</title>
+        <link rel="stylesheet" href="./css/index.css">
+    </head>
+    <body>
+        <ion-nav-bar class="nav-title-slide-ios7 bar-positive">
+            <ion-nav-back-button class="button-icon ion-arrow-left-c">
+            </ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view animation="slide-left-right">
+        </icon-nav-view>
+        <script type="text/javascript" src="./bower_components/requirejs/require.js" data-main="./js/main.js"></script>
+    </body>
 </html>

@@ -22,6 +22,7 @@ define([
 
             this.$.currentCheckPointLevel = this._gameStatus[this._checkpPointType] || 0;
             this.$.checkPointLevelsCount = this._checkPointsData.checkPoints.length;
+            this.$.leftChances = 3;
 
             this._initCurrentLevel();
         },
@@ -51,6 +52,23 @@ define([
             }).value();
         },
 
+        isClickable: function() {
+            return _.filter(this.$.images, {
+                selected: true
+            }).length < 3;
+        },
+
+        showToolTip: function() {
+            _.forEach(this.$.images, function(image) {
+                image.selected = false;
+            });
+            _.chain(this.$.images).filter(function(image) {
+                return image.id < 10;
+            }).slice(0, 2).forEach(function(image) {
+                image.selected = true;
+            });
+        },
+
         canConfirm: function() {
             return _.filter(this.$.images, {
                 selected: true
@@ -60,10 +78,15 @@ define([
         confirm: function() {
             var selectedImageIds = _.chain(this.$.images).filter({
                 selected: true
-            }).pluck('id').sort().value();
+            }).pluck('id').sortBy().value();
             var isAnswerRight = !(_.last(selectedImageIds) > 10 && _.first(selectedImageIds) < 10);
             if (isAnswerRight) {
                 this._nextLevel();
+            } else {
+                this.$.leftChances--;
+                if (this.$.leftChances === 0) {
+
+                }
             }
         },
 

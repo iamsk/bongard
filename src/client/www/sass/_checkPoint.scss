@@ -1,12 +1,25 @@
 .check-point {
+    .author {
+        font-size: 15px;
+        color: #552bdf;
+    }
+    .current-level, .total-level {
+        color: #552bdf;
+        font-size: 15px;
+    }
     .images-container {
-        img {
-            border: solid 2px white;
-        }
-        .selected {
-            img {
-                border: solid 2px #009;
+        .button {
+            height: 106px;
+            width: 46%;
+            margin: 1.8%;
+            padding: 5px 0;
+            background-color: white;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            &.selected {
+                border: 2px solid #552bdf;
             }
         }
+        
     }
 }

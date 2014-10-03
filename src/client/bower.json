@@ -1,19 +1,24 @@
 {
-  "name": "wedia.finance",
+  "name": "bongard",
   "version": "0.0.1",
   "dependencies": {
-    "bootstrap": "~3.2.0",
     "requirejs": "~2.1.14",
     "lodash": "~2.4.1",
     "moment": "~2.8.0",
-    "angular": "~1.2.25",
-    "angular-animate": "~1.2.25",
-    "angular-ui-router": "~0.2.10",
+    "angular": "~1.2.26",
+    "angular-animate": "~1.2.26",
+    "angular-ui-router": "~0.2.7",
     "angular-classy": "~0.4.2",
     "angular-gettext": "~1.1.2",
     "restangular": "~1.4.0",
-    "angulartics": "~0.16.1",
+    "angulartics": "~0.17.0",
     "requirejs-text": "~2.0.12",
-    "angular-local-storage": "~0.0.7"
+    "angular-local-storage": "~0.0.7",
+    "ionic": "~1.0.0-beta.13"
+  },
+  "resolutions": {
+    "angular": "~1.2.26",
+    "angular-animate": "~1.2.26",
+    "angulartics": "~0.17.0"
   }
 }

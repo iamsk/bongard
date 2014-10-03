@@ -1,9 +1,8 @@
-@import "CSS:../bower_components/bootstrap/dist/css/bootstrap";
-@import "CSS:../bower_components/bootstrap/dist/css/bootstrap-theme";
+@import "CSS:../bower_components/ionic/release/css/ionic.min";
 
 body {
-    width: 720px;
-    margin: 20px auto;
+    // width: 720px;
+    // margin: 20px auto;
 }
 @import "_home.scss";
 @import "_checkPoint.scss";
