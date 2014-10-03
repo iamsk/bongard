@@ -6,7 +6,7 @@ define([
     gameInfo
 ) {
     return {
-        name: 'HomeCtrl',
+        name: 'ArchievedCtrl',
 
         inject: ['$scope', '$state', 'localStorageService', '$stateParams'],
 

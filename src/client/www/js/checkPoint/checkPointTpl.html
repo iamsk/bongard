@@ -9,10 +9,6 @@
                     Author: <strong class="author">{{author}}</strong>, Level: <strong class="current-level">{{currentCheckPointLevel + 1}}</strong> / Total: <strong class="total-level">{{checkPointLevelsCount}}</strong>
                 </div>
             </div>
-            <div class="actions">
-                <button class="button button-small button-positive" ng-click="showToolTip()">Tooltip</button>
-                <button class="button button-small button-energized button-confirm" ng-class="{disabled: !canConfirm()}" ng-click="confirm()">Confirm</button>
-            </div>
             <div class="images-container">
                 <button class="button" ng-repeat="image in images" ng-click="(isClickable() || image.selected) && (image.selected = !image.selected)" ng-class="{selected: image.selected}">
                     <img ng-src="{{image.url}}" />
@@ -23,6 +19,10 @@
             </div>
             <div class="left-chances" ng-class="{'text-safe': leftChances === 3, 'text-warning': leftChances === 2, 'text-danger': leftChances === 1}">
                 You have {{leftChances}} chances left to continue.
+            </div>
+            <div class="actions">
+                <button class="button button-small button-positive" ng-click="showToolTip()">Tooltip</button>
+                <button class="button button-small button-energized button-confirm" ng-class="{disabled: !canConfirm()}" ng-click="confirm()">Confirm</button>
             </div>
             <div class="achieved">
                 <a class="button button-small button-block button-stable">See what you have achieved</a>

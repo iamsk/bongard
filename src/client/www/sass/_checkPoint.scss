@@ -1,5 +1,4 @@
 .check-point {
-    padding: 10px 20px;
     .info {
         padding-left: 2%;
         .author {
@@ -14,14 +13,18 @@
     
     .images-container {
         .button {
-            height: 96px;
-            width: 46%;
-            margin: 2%;
+            height: 90px;
+            width: 30%;
+            margin: 1.6%;
+            padding: 0;
             background-color: white;
             border-radius: 5px;
             border: 2px solid #ccc;
             &.selected {
                 border: 2px solid #552bdf;
+            }
+            img {
+                width: 100%;
             }
         }   
     }
@@ -55,7 +58,7 @@
     }
     .achieved {
         .button {
-            margin: 0 2%;
+            margin: 10px 2%;
         }
     }
 }

@@ -29,7 +29,9 @@ define([
         './home/homeCtrl',
         'text!./home/homeTpl.html',
         './checkPoint/checkPointCtrl',
-        'text!./checkPoint/checkPointTpl.html'
+        'text!./checkPoint/checkPointTpl.html',
+        './archieved/archievedCtrl',
+        'text!./archieved/archievedTpl.html'
     ], function(
         tabsTpl,
         aboutTpl,
@@ -38,11 +40,14 @@ define([
         homeCtrl,
         homeTpl,
         checkPointCtrl,
-        checkPointTpl
+        checkPointTpl,
+        archievedCtrl,
+        archievedTpl
     ) {
         module.classy.controllers([
             homeCtrl,
-            checkPointCtrl
+            checkPointCtrl,
+            archievedCtrl
         ]).config(['$stateProvider', '$urlRouterProvider',
             function($stateProvider, $urlRouterProvider) {
                 $urlRouterProvider.otherwise('/home');
@@ -68,7 +73,7 @@ define([
                     url: "/archieved:type/",
                     views: {
                         home: {
-                            template: checkPointTpl
+                            template: archievedTpl
                         }
                     }
                 }).state('tabs.about', {
