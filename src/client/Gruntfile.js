@@ -43,8 +43,8 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     flatten: false,
-                    cwd: '<%= __dirname %>/<%= appFolder %>',
-                    src: ['img/**', 'fonts/**', 'index.html'],
+                    cwd: __dirname + '/<%= appFolder %>/',
+                    src: ['image/**', 'fonts/**', 'phonegap/**'],
                     dest: '<%= buildFolder %>/'
                 }]
             }
@@ -79,26 +79,19 @@ module.exports = function(grunt) {
                         mangle_toplevel: true,
                         no_copyright: true
                     },
-                    modules: [{
-                        name: 'main'
-                    }, {
-                        name: 'index/bootstrap',
-                        exclude: ['main']
-                    }, {
-                        name: 'admin/bootstrap',
-                        exclude: ['main']
-                    }],
-                    dir: "<%= buildFolder %>"
+                    name: 'main',
+                    // modules: [{
+                    //     name: 'main'
+                    // }, {
+                    //     name: 'index/bootstrap',
+                    //     exclude: ['main']
+                    // }, {
+                    //     name: 'admin/bootstrap',
+                    //     exclude: ['main']
+                    // }],
+                    // dir: "<%= buildFolder %>"
+                    out: "<%= buildFolder %>/js/main.js"
                 }
-            }
-        },
-        usemin: {
-            html: ['<%= buildFolder %>/*.html']
-        },
-        useminPrepare: {
-            html: '*.html',
-            options: {
-                dest: 'build'
             }
         },
         uglify: {
@@ -118,12 +111,12 @@ module.exports = function(grunt) {
             }
         },
         concurrent: {
-            build: ['compass:build', 'requirejs:compile', 'copy:build', 'uglify', 'useminPrepare'],
-            preBuild: [ /*'jshint', */ 'clean' /*, 'docco'*/ ]
+            build: ['compass:build', 'requirejs:compile', 'copy:build', 'uglify'],
+            preBuild: [ /*'jshint', */ 'clean:build' /*, 'docco'*/ ]
         },
         ngtemplates: {
             'mySales.template': {
-                src: '<%= appFolder %>/js/modules/**/*.html',
+                src: '<%= appFolder %>/js/**/*.html',
                 dest: '<%= appFolder %>/js/template.js',
                 options: {
                     url: function(url) {
@@ -168,6 +161,27 @@ module.exports = function(grunt) {
             unit: {
                 configFile: 'config/karma.conf.js'
             }
+        },
+        htmlbuild: {
+            indexHtmlForPhonegap: {
+                src: '<%= appFolder %>/index.html',
+                dest: '<%= buildFolder %>/index.html',
+                options: {
+                    beautify: true,
+                    relative: false,
+                    scripts: {
+                        bundle: {
+                            cwd: '<%= buildFolder %>/phonegap',
+                            files: [
+                                'cordova.js'
+                            ]
+                        }
+                    },
+                    data: {
+                        weinre: {}
+                    }
+                }
+            }
         }
     });
 
@@ -182,12 +196,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-angular-gettext');
     grunt.loadNpmTasks('grunt-angular-templates');
-    grunt.loadNpmTasks('grunt-usemin');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-html-build');
 
     grunt.registerTask('default', ['jshint', 'karma']);
     grunt.registerTask('init', ['clean:fonts', 'copy:fonts']);
     grunt.registerTask('lang', ['nggettext_extract', 'nggettext_compile']);
     grunt.registerTask('template', ['ngtemplates']);
-    grunt.registerTask('build', ['ngtemplates', 'concurrent:preBuild', 'concurrent:build', 'usemin', 'clean:preCompress', 'compress']);
+    grunt.registerTask('build', ['init', 'ngtemplates', 'concurrent:preBuild', 'concurrent:build', 'htmlbuild:indexHtmlForPhonegap', 'clean:preCompress']);
 };

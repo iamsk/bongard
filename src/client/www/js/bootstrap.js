@@ -14,8 +14,11 @@ define([
     'angular.animate',
     'angular.santitize',
     'restangular'
-], function (
+], function(
     require
 ) {
+    try {
+        require(['./template']);
+    } catch (e) {}
     require(['./app']);
 });
