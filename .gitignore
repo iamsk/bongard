@@ -1,3 +1,6 @@
-*.pyc
 node_modules/
 bower_components/
+src/client/build
+src/client/.sass-cache
+src/client/mobile/bongard/platforms
+src/client/mobile/bongard/plugins

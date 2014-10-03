@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="bb.game.bongard" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Bongard</name>
+    <description>
+        Try to find patterns in the given images to increase iq.
+    </description>
+    <author email="zbin@appnnie.com, lovanwubing@gmail.com" href="http://cordova.io">
+        BinBing team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+
+    <gap:plugin name="nl.x-services.plugins.socialsharing" />
+</widget>
