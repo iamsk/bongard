@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 IMAGE_BAKUP = os.path.join(BASE_DIR, 'images/components')
 
 # real image size is (98, 98) after cut the border
-# but we need more clean image, so get 96*96
+# but we need more clean image, so get 96*96w
 IMAGE_SIZE = (96, 96)
 
 image_x2 = lambda x: x + IMAGE_SIZE[0]
