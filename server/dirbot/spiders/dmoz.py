@@ -18,10 +18,10 @@ class DmozSpider(Spider):
         sites = sel.xpath('//table[@border="2"]')
         sites = [site.xpath('//td/a') for site in sites]
         all_urls = sites[0]# + sites[1]
+        print '='*77
         print len(all_urls)
         for site in all_urls:
             url = site.xpath('@href').extract()[0]
-            print url
             yield Request('%s/%s' % (BASE_URL, url),
                           callback=self.parse_single)
 

@@ -48,7 +48,7 @@ class Scissor(object):
 
     def crop_one(self, im, box, file_path):
         region = im.crop(box)
-        region.save(file_path)
+        region.save(file_path, 'JPEG', quality=100)
 
 if __name__ == '__main__':
     s = Scissor()
