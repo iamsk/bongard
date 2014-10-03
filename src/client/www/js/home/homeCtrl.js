@@ -11,6 +11,7 @@ define([
         inject: ['$scope', '$state', 'localStorageService'],
 
         init: function() {
+            this.$.settings.page = 'home';
             this.$.gameInfo = angular.fromJson(gameInfo);
             this.$.gameStatus = this._gameStatus = angular.fromJson(this.localStorageService.get('gameStatus')) || {};
             this.$.buttonClasses = {

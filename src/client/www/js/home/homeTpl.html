@@ -1,6 +1,6 @@
 <ion-view title="Welcome to Bongard!" class="home">
     <ion-content ng-controller="HomeCtrl" class="padding">
-        <a ng-repeat="checkPointType in gameInfo.checkPointTypes" ui-sref="tabs.checkPoint({type: checkPointType.name})" class="button button-block" ng-class="buttonClasses[checkPointType.name]">
+        <a ng-repeat="checkPointType in gameInfo.checkPointTypes" ui-sref="tabs.checkPoint.params({type: checkPointType.name})" class="button button-block" ng-class="buttonClasses[checkPointType.name]">
             <div class="title">
                 {{checkPointType.name}}
             </div>

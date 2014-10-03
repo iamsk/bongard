@@ -11,16 +11,17 @@ define([
         inject: ['$scope', '$state', '$stateParams', 'localStorageService', '$ionicPopup'],
 
         init: function() {
-            this._checkpPointType = this.$stateParams.type;
+            this.$.settings.page = 'checkPoint';
+            this.$.checkPointType = this.$stateParams.type;
 
             this._gameInfo = angular.fromJson(gameInfo);
             this._checkPointsData = _.find(this._gameInfo.checkPointTypes, {
-                name: this._checkpPointType
+                name: this.$.checkPointType
             });
 
             this._gameStatus = angular.fromJson(this.localStorageService.get('gameStatus')) || {};
 
-            this.$.currentCheckPointLevel = this._gameStatus[this._checkpPointType] || 0;
+            this.$.currentCheckPointLevel = parseInt(this.$stateParams.id || this._gameStatus[this.$.checkPointType] || 0);
             this.$.checkPointLevelsCount = this._checkPointsData.checkPoints.length;
             this.$.leftChances = 3;
 
@@ -105,7 +106,7 @@ define([
             if (this.$.currentCheckPointLevel === this._checkPointsData.checkPoints.length) {
                 alert("you win");
             } else {
-                this._gameStatus[this._checkpPointType] = this.$.currentCheckPointLevel++;
+                this._gameStatus[this.$.checkPointType] = ++this.$.currentCheckPointLevel;
                 this.localStorageService.set('gameStatus', angular.toJson(this._gameStatus));
 
                 this._initCurrentLevel();

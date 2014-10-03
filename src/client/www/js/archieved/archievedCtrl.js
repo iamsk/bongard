@@ -11,12 +11,13 @@ define([
         inject: ['$scope', '$state', 'localStorageService', '$stateParams'],
 
         init: function() {
-            var gameInfo = angular.fromJson(gameInfo);
+            this.$.settings.page = 'archieved';
             var gameStatus = this._gameStatus = angular.fromJson(this.localStorageService.get('gameStatus')) || {};
             
-            var checkPoinType = $stateParams.type;
-            this.$.list = _.filter(gameInfo[checkPoinType].checkPoints, function(checkPoint, checkPointIndex) {
-                return checkPointIndex < gameStatus[checkPoinType] || 0;
+            this.$.checkPointType = this.$stateParams.type;
+            var self = this;
+            this.$.list = _.filter(_.find(angular.fromJson(gameInfo).checkPointTypes, {name: self.$.checkPointType}).checkPoints, function(checkPoint, checkPointIndex) {
+                return checkPointIndex < gameStatus[self.$.checkPointType] || 0;
             });
         }
     };

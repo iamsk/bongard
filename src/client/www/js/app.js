@@ -22,6 +22,7 @@ define([
     });
 
     require([
+        './appCtrl',
         'text!./tabsTpl.html',
         'text!./aboutTpl.html',
         'text!./contactTpl.html',
@@ -33,6 +34,7 @@ define([
         './archieved/archievedCtrl',
         'text!./archieved/archievedTpl.html'
     ], function(
+        appCtrl,
         tabsTpl,
         aboutTpl,
         contactTpl,
@@ -45,6 +47,7 @@ define([
         archievedTpl
     ) {
         module.classy.controllers([
+            appCtrl,
             homeCtrl,
             checkPointCtrl,
             archievedCtrl
@@ -63,14 +66,17 @@ define([
                         }
                     }
                 }).state('tabs.checkPoint', {
+                    abstract: true,
                     url: "/checkPoint/:type",
                     views: {
                         home: {
                             template: checkPointTpl
                         }
                     }
+                }).state('tabs.checkPoint.params', {
+                    url: "?id",
                 }).state('tabs.archieved', {
-                    url: "/archieved:type/",
+                    url: "/archieved/:type/",
                     views: {
                         home: {
                             template: archievedTpl
