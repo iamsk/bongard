@@ -17,8 +17,8 @@ define([
             this.$.buttonClasses = {
                 'simple': 'button-balanced',
                 'medium': 'button-energized',
-                'senior': 'button-assertive',
-                'BT': 'button-royal'
+                'hard': 'button-assertive',
+                'complex': 'button-royal'
             }
         }
     };

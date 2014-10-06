@@ -36,9 +36,9 @@ define([
             this.$.author = checkPoint.author;
 
             var imagesIds = [];
-            while (imagesIds.length < 6) {
+            while (imagesIds.length < 8) {
                 var randomInt = 10 + _.random(1, 6);
-                if (imagesIds.length >= 3) {
+                if (imagesIds.length >= 4) {
                     randomInt += 10
                 }
                 if (_.indexOf(imagesIds, randomInt) < 0) {
@@ -56,7 +56,7 @@ define([
         isClickable: function() {
             return _.filter(this.$.images, {
                 selected: true
-            }).length < 3;
+            }).length < 4;
         },
 
         showToolTip: function() {
@@ -73,7 +73,7 @@ define([
         canConfirm: function() {
             return _.filter(this.$.images, {
                 selected: true
-            }).length === 3;
+            }).length === 4;
         },
 
         confirm: function() {
@@ -97,26 +97,23 @@ define([
                 } else {
                     this.$ionicPopup.alert({
                         title: 'Left Chances',
-                        template: 'You get only ' + this.$.leftChances + ' chances left for this step. Otherwise you have to see an ad. ^_^'
+                        template: 'You get only <strong>' + this.$.leftChances + '</strong> chances left for this step. Otherwise you have to see an ad. ^_^'
                     });
                 }
             }
         },
 
         _nextLevel: function() {
-            if (this.$.currentCheckPointLevel === this._checkPointsData.checkPoints.length) {
+            if (this.$.currentCheckPointLevel === this._checkPointsData.checkPoints.length - 1) {
                 this.$ionicPopup.alert({
-                        title: 'You Win',
-                        template: 'Congratulations! You already passed all of the tests and proved you have a really hight IQ.'
-                    }).then(function() {
-                        self.$.leftChances++;
-                    });
-            } else {
-                this._gameStatus[this.$.checkPointType] = ++this.$.currentCheckPointLevel;
-                this.localStorageService.set('gameStatus', angular.toJson(this._gameStatus));
-
-                this._initCurrentLevel();
+                    title: 'You Win',
+                    template: 'Congratulations! You already passed all of the tests and proved you have a really high IQ.'
+                })
             }
+            this._gameStatus[this.$.checkPointType] = ++this.$.currentCheckPointLevel;
+            this.localStorageService.set('gameStatus', angular.toJson(this._gameStatus));
+
+            this._initCurrentLevel();
         }
     };
 });

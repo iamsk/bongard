@@ -1,13 +1,15 @@
 .home {
     .button {
+        margin-top: 0;
+        margin-bottom: 9px;
         .title {
             font-size: 25px;
-            line-height: 33px;
+            line-height: 28px;
             text-transform: capitalize;
-            margin-top: 25px;
+            margin-top: 12px;
         }
         .description {
-            line-height: 40px;
+            line-height: 30px;
         }
     }
 }

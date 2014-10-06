@@ -17,7 +17,7 @@ angular.module('mySales.template', []).run(['$templateCache', function($template
 
 
   $templateCache.put('js/home/homeTpl.html',
-    "<ion-view title=\"Welcome to Bongard!\" class=home><ion-content ng-controller=HomeCtrl class=padding><a ng-repeat=\"checkPointType in gameInfo.checkPointTypes\" ui-sref=\"tabs.checkPoint.params({type: checkPointType.name})\" class=\"button button-block\" ng-class=buttonClasses[checkPointType.name]><div class=title>{{checkPointType.name}}</div><div class=description ng-if=\"gameStatus[checkPointType.name] === checkPointType.checkPoints.length\"><small>Done!</small></div><div ng-if=\"(gameStatus[checkPointType.name] || 0) < checkPointType.checkPoints.length\"><small>Level: {{(gameStatus[checkPointType.name] || 0) + 1}} / Total: {{checkPointType.checkPoints.length}}</small></div></a></ion-content></ion-view>"
+    "<ion-view title=\"Welcome to Bongard!\" class=home><ion-content ng-controller=HomeCtrl class=padding><a ng-repeat=\"checkPointType in gameInfo.checkPointTypes\" ui-sref=\"tabs.checkPoint.params({type: checkPointType.name})\" class=\"button button-block\" ng-class=buttonClasses[checkPointType.name]><div class=title>{{checkPointType.name}}</div><div class=description ng-if=\"gameStatus[checkPointType.name] === checkPointType.checkPoints.length\"><small>Done!</small></div><div class=description ng-if=\"(gameStatus[checkPointType.name] || 0) < checkPointType.checkPoints.length\"><small>Level: {{(gameStatus[checkPointType.name] || 0) + 1}} / Total: {{checkPointType.checkPoints.length}}</small></div></a></ion-content></ion-view>"
   );
 
 

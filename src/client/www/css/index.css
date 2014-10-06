@@ -12089,7 +12089,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   */
 /* line 7788, ../bower_components/ionic/release/css/ionic.css */
 .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
-  height: 44px;
+  height: 64px;
 }
 
 /* line 7790, ../bower_components/ionic/release/css/ionic.css */
@@ -12099,17 +12099,17 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 
 /* line 7792, ../bower_components/ionic/release/css/ionic.css */
 .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > * {
-  margin-top: 0px;
+  margin-top: 20px;
 }
 
 /* line 7794, ../bower_components/ionic/release/css/ionic.css */
 .platform-ios.platform-cordova:not(.fullscreen) .tabs-top > .tabs, .platform-ios.platform-cordova:not(.fullscreen) .tabs.tabs-top {
-  top: 44px;
+  top: 64px;
 }
 
 /* line 7796, ../bower_components/ionic/release/css/ionic.css */
 .platform-ios.platform-cordova:not(.fullscreen) .has-header, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
-  top: 44px;
+  top: 64px;
 }
 
 /* line 7798, ../bower_components/ionic/release/css/ionic.css */
@@ -12159,16 +12159,21 @@ body {
   margin: 20px auto;
 }
 
-/* line 3, ../sass/_home.scss */
+/* line 2, ../sass/_home.scss */
+.home .button {
+  margin-top: 0;
+  margin-bottom: 9px;
+}
+/* line 5, ../sass/_home.scss */
 .home .button .title {
   font-size: 25px;
-  line-height: 33px;
+  line-height: 28px;
   text-transform: capitalize;
-  margin-top: 25px;
+  margin-top: 12px;
 }
-/* line 9, ../sass/_home.scss */
+/* line 11, ../sass/_home.scss */
 .home .button .description {
-  line-height: 40px;
+  line-height: 30px;
 }
 
 /* line 2, ../sass/_checkPoint.scss */
@@ -12187,9 +12192,9 @@ body {
 }
 /* line 15, ../sass/_checkPoint.scss */
 .check-point .images-container .button {
-  height: 90px;
-  width: 30%;
-  margin: 1.6%;
+  height: 77px;
+  width: 23%;
+  margin: 1.5% 0.8%;
   padding: 0;
   background-color: white;
   border-radius: 5px;
