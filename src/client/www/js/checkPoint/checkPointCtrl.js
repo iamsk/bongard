@@ -88,12 +88,7 @@ define([
                 var self = this;
                 if (this.$.leftChances === 0) {
                     window.plugins && window.plugins.AdMob.createInterstitialView();
-                    this.$ionicPopup.alert({
-                        title: 'To See an Advertisment',
-                        template: 'You already seen the ad, you will get one more chance, press OK button to continue.'
-                    }).then(function() {
-                        self.$.leftChances++;
-                    });
+                    self.$.leftChances = 3;
                 } else {
                     this.$ionicPopup.alert({
                         title: 'Left Chances',

@@ -16,6 +16,4 @@
         <splash src="res/screen/ios/Default@2x~iphone.png" width="640" height="960" />
         <splash src="res/screen/ios/Default-568h@2x~iphone.png" width="640" height="1136" />
     </platform>
-
-    <gap:plugin name="nl.x-services.plugins.socialsharing" />
 </widget>
