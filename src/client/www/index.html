@@ -6,7 +6,7 @@
         <title>bondgard</title>
         <link rel="stylesheet" href="./css/index.css">
     </head>
-    <body>
+    <body onload="onDomLoad()" class="fullscreen">
         <div ng-controller="AppCtrl">
             <ion-nav-bar class="nav-title-slide-ios7 bar-positive">
                 <ion-nav-back-button class="button-icon ion-arrow-left-c" ng-hide="settings.page === 'home'" ng-click="goBack()">

@@ -2,7 +2,7 @@ angular.module('mySales.template', []).run(['$templateCache', function($template
   'use strict';
 
   $templateCache.put('js/aboutTpl.html',
-    "<ion-view title=About class=about><ion-content class=padding><h1>About bongard</h1></ion-content></ion-view>"
+    "<ion-view title=About class=about><ion-content class=padding><p>Bongard problems are a kind of puzzle invented by the computer scientist Mikhail Moiseevich Bongard in the mid-1960s.</p><p>There is a set of six diagrams. Three of them have a common factor, rule or pattern, which is lacking in the other three, because they have a different pattern, or the pattern they have is the negation of the rule.</p><p>Having fun while doing it. Some are trivial, but others are extremely complicated. Each individual has more or less difficult to solve the problems, which means nothing in terms of intelligence or any other mental characteristic.</p><p>If you have any questions or suggestions, Please feel free to send me email: <a href=mailto:pwdking@gmail.com>pwdking@gmail.com</a></p></ion-content></ion-view>"
   );
 
 
@@ -16,18 +16,18 @@ angular.module('mySales.template', []).run(['$templateCache', function($template
   );
 
 
-  $templateCache.put('js/howToTpl.html',
-    "<ion-view title=Contact class=about><ion-content class=padding><h1>Contact</h1></ion-content></ion-view>"
-  );
-
-
   $templateCache.put('js/home/homeTpl.html',
     "<ion-view title=\"Welcome to Bongard!\" class=home><ion-content ng-controller=HomeCtrl class=padding><a ng-repeat=\"checkPointType in gameInfo.checkPointTypes\" ui-sref=\"tabs.checkPoint.params({type: checkPointType.name})\" class=\"button button-block\" ng-class=buttonClasses[checkPointType.name]><div class=title>{{checkPointType.name}}</div><div class=description ng-if=\"gameStatus[checkPointType.name] === checkPointType.checkPoints.length\"><small>Done!</small></div><div ng-if=\"(gameStatus[checkPointType.name] || 0) < checkPointType.checkPoints.length\"><small>Level: {{(gameStatus[checkPointType.name] || 0) + 1}} / Total: {{checkPointType.checkPoints.length}}</small></div></a></ion-content></ion-view>"
   );
 
 
+  $templateCache.put('js/howToTpl.html',
+    "<ion-view title=HowTo class=about><ion-content class=padding><p>An example is the case three of them are triangles and the others are squares. The goal is to find the rule/pattern to divide those diagrams.</p></ion-content></ion-view>"
+  );
+
+
   $templateCache.put('js/tabsTpl.html',
-    "<ion-tabs class=\"tabs-icon-left tabs-positive\"><ion-tab title=Home icon=ion-home ui-sref=tabs.home><ion-nav-view name=home></ion-nav-view></ion-tab><ion-tab title=About icon=ion-ios7-information ui-sref=tabs.about><ion-nav-view name=about></ion-nav-view></ion-tab><ion-tab title=Contact icon=ion-ios7-world ui-sref=tabs.contact><ion-nav-view name=contact></ion-nav-view></ion-tab></ion-tabs>"
+    "<ion-tabs class=\"tabs-icon-left tabs-positive\"><ion-tab title=Home icon=ion-home ui-sref=tabs.home><ion-nav-view name=home></ion-nav-view></ion-tab><ion-tab title=About icon=ion-ios7-information ui-sref=tabs.about><ion-nav-view name=about></ion-nav-view></ion-tab><ion-tab title=HowTo icon=ion-ios7-world ui-sref=tabs.contact><ion-nav-view name=contact></ion-nav-view></ion-tab></ion-tabs>"
   );
 
 }]);

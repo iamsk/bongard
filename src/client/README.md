@@ -3,7 +3,7 @@ How to build mobile on iOS?
     2. cd to mobile/bongard directory
     3. run "cordova platform add ios"
     4. add plugin for social sharing: "cordova plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git"
-    5. add pluing for admob: "cordova plugin add com.rjfun.cordova.plugin.admob"
+    5. add pluing for admob: "cordova plugin add https://github.com/floatinghotpot/cordova-plugin-admob.git"
     6. run "grunt build" to build all the required assets
     7. run "rm -rf www" to remove the "www" folder
     8. run "ln -sf ../../build www" to create a symbol link to the build assets

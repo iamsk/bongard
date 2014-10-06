@@ -11,6 +11,9 @@ define([
         inject: ['$scope', '$state', 'localStorageService'],
 
         init: function() {
+            ionic.Platform.ready(function() {
+                window.StatusBar && window.StatusBar.hide();
+            });
             this.$.gameInfo = angular.fromJson(gameInfo);
             this.$.gameStatus = this._gameStatus = angular.fromJson(this.localStorageService.get('gameStatus')) || {};
             this.$.settings = {
@@ -29,10 +32,12 @@ define([
         },
 
         goBack: function() {
-            if(this.$.settings.page === 'checkPoint') {
+            if (this.$.settings.page === 'checkPoint') {
                 this.$state.go('tabs.home');
-            } else if(this.$.settings.page === 'archieved') {
-                this.$state.go('tabs.checkPoint.params', {type: this.$state.params.type});
+            } else if (this.$.settings.page === 'archieved') {
+                this.$state.go('tabs.checkPoint.params', {
+                    type: this.$state.params.type
+                });
             }
         }
     };

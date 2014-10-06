@@ -44,7 +44,7 @@ module.exports = function(grunt) {
                     expand: true,
                     flatten: false,
                     cwd: __dirname + '/<%= appFolder %>/',
-                    src: ['image/**', 'fonts/**', 'phonegap/**'],
+                    src: ['image/**', 'fonts/**', 'phonegap/**', 'js/admob.js'],
                     dest: '<%= buildFolder %>/'
                 }]
             }

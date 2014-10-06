@@ -23,7 +23,6 @@ define([
 
             this.$.currentCheckPointLevel = parseInt(this.$stateParams.id || this._gameStatus[this.$.checkPointType] || 0);
             this.$.checkPointLevelsCount = this._checkPointsData.checkPoints.length;
-            this.$.leftChances = 3;
 
             this._initCurrentLevel();
         },
@@ -33,6 +32,7 @@ define([
             if (!checkPoint) {
                 return;
             }
+            this.$.leftChances = 3;
             this.$.author = checkPoint.author;
 
             var imagesIds = [];
@@ -87,9 +87,10 @@ define([
                 this.$.leftChances--;
                 var self = this;
                 if (this.$.leftChances === 0) {
+                    window.plugins && window.plugins.AdMob.createInterstitialView();
                     this.$ionicPopup.alert({
-                        title: 'Advertisment',
-                        template: 'You have to see an ad before continue as your punishment ^_^ <br /> This is an ad!'
+                        title: 'To See an Advertisment',
+                        template: 'You already seen the ad, you will get one more chance, press OK button to continue.'
                     }).then(function() {
                         self.$.leftChances++;
                     });
@@ -104,7 +105,12 @@ define([
 
         _nextLevel: function() {
             if (this.$.currentCheckPointLevel === this._checkPointsData.checkPoints.length) {
-                alert("you win");
+                this.$ionicPopup.alert({
+                        title: 'You Win',
+                        template: 'Congratulations! You already passed all of the tests and proved you have a really hight IQ.'
+                    }).then(function() {
+                        self.$.leftChances++;
+                    });
             } else {
                 this._gameStatus[this.$.checkPointType] = ++this.$.currentCheckPointLevel;
                 this.localStorageService.set('gameStatus', angular.toJson(this._gameStatus));

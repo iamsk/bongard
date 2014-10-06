@@ -1,3 +1,10 @@
+ function onDomLoad() {
+        if(( /(ipad|iphone|ipod|android)/i.test(navigator.userAgent) )) {
+            document.addEventListener('deviceready', onDeviceReady, false);
+        } else {
+            onDeviceReady();
+        }
+    }
  function onDeviceReady() {
     initAd();
 
@@ -27,9 +34,9 @@ function initAd(){
         window.plugins.AdMob.setOptions( {
             publisherId: admobid.banner,
             interstitialAdId: admobid.interstitial,
-            bannerAtTop: false, // set to true, to put banner at top
+            bannerAtTop: true, // set to true, to put banner at top
             overlap: false, // set to true, to allow banner overlap webview
-            offsetTopBar: false, // set to true to avoid ios7 status bar overlap
+            offsetTopBar: true, // set to true to avoid ios7 status bar overlap
             isTesting: false, // receiving test ad
             autoShow: true // auto show interstitial ad when loaded
         });
