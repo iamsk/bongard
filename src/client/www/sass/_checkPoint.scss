@@ -31,8 +31,11 @@
     .actions {
         padding: 1% 2%;
         .button {
-            width: 48%;
+            width: 58%;
             padding: 1% 10%;
+        }
+        .button-tooltip {
+            width: 38%;
         }
         .button-confirm {
             float: right;
@@ -43,8 +46,6 @@
         color: #552bdf;
     }
     .left-chances {
-        text-align: center;
-
         &.text-safe {
             color: #498f24;
         }

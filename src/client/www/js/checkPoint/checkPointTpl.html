@@ -12,7 +12,13 @@
         <div ng-show="currentCheckPointLevel < checkPointLevelsCount">
             <div class="info">
                 <div>
-                    Author: <strong class="author">{{author}}</strong>, Level: <strong class="current-level">{{currentCheckPointLevel + 1}}</strong> / Total: <strong class="total-level">{{checkPointLevelsCount}}</strong>
+                    Author: <strong class="author">{{author}}</strong>
+                </div>
+                <div>
+                    Level: <strong class="current-level">{{currentCheckPointLevel + 1}}</strong> / Total: <strong class="total-level">{{checkPointLevelsCount}}</strong>
+                </div>
+                <div class="left-chances" ng-class="{'text-safe': leftChances === 3, 'text-warning': leftChances === 2, 'text-danger': leftChances === 1}">
+                    You have <storng>{{leftChances}}</strong> chances left to continue.
                 </div>
             </div>
             <div class="images-container">
@@ -20,15 +26,9 @@
                     <img ng-src="{{image.url}}" />
                 </button>
             </div>
-            <div class="description">
-                Select 3 of them with the same pattern
-            </div>
-            <div class="left-chances" ng-class="{'text-safe': leftChances === 3, 'text-warning': leftChances === 2, 'text-danger': leftChances === 1}">
-                You have {{leftChances}} chances left to continue.
-            </div>
             <div class="actions">
-                <button class="button button-small button-positive" ng-click="showToolTip()">Tooltip</button>
-                <button class="button button-small button-energized button-confirm" ng-class="{disabled: !canConfirm()}" ng-click="confirm()">Confirm</button>
+                <button class="button button-positive button-tooltip" ng-click="showToolTip()">Tooltip</button>
+                <button class="button button-energized button-confirm" ng-class="{disabled: !canConfirm()}" ng-click="confirm()">Confirm</button>
             </div>
             <div class="achieved">
                 <a ui-sref="tabs.archieved({type: checkPointType})" class="button button-small button-block button-stable">See what you have achieved</a>

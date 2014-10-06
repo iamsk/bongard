@@ -12214,36 +12214,36 @@ body {
 }
 /* line 33, ../sass/_checkPoint.scss */
 .check-point .actions .button {
-  width: 48%;
+  width: 58%;
   padding: 1% 10%;
 }
 /* line 37, ../sass/_checkPoint.scss */
+.check-point .actions .button-tooltip {
+  width: 38%;
+}
+/* line 40, ../sass/_checkPoint.scss */
 .check-point .actions .button-confirm {
   float: right;
 }
-/* line 41, ../sass/_checkPoint.scss */
+/* line 44, ../sass/_checkPoint.scss */
 .check-point .description {
   text-align: center;
   color: #552bdf;
 }
-/* line 45, ../sass/_checkPoint.scss */
-.check-point .left-chances {
-  text-align: center;
-}
-/* line 48, ../sass/_checkPoint.scss */
+/* line 49, ../sass/_checkPoint.scss */
 .check-point .left-chances.text-safe {
   color: #498f24;
 }
-/* line 51, ../sass/_checkPoint.scss */
+/* line 52, ../sass/_checkPoint.scss */
 .check-point .left-chances.text-warning {
   color: #d39211;
 }
-/* line 54, ../sass/_checkPoint.scss */
+/* line 55, ../sass/_checkPoint.scss */
 .check-point .left-chances.text-danger {
   color: #cc2311;
   font-weight: bold;
 }
-/* line 60, ../sass/_checkPoint.scss */
+/* line 61, ../sass/_checkPoint.scss */
 .check-point .achieved .button {
   margin: 10px 2%;
 }
