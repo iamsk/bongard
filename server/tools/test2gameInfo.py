@@ -71,7 +71,9 @@ def run():
             cp = get_check_point(bp['number'], bp['author'])
             level = LEVELS[new_bps[bp['number']]]
             tpl['checkPointTypes'][level]['checkPoints'].append(cp)
-
+    tpl['checkPointTypes'][2]['checkPoints'] = tpl['checkPointTypes'][3]['checkPoints'][25:]
+    for i in range(4):
+        tpl['checkPointTypes'][i]['checkPoints'] = tpl['checkPointTypes'][i]['checkPoints'][:20]
     dump(tpl, open('/Users/zhangbin/workspace/bongard/src/client/www/js/data/'
                    'gameInfo.json', 'w'))
 
