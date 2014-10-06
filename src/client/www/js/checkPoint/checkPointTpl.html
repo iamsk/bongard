@@ -5,6 +5,9 @@
         </ion-nav-buttons>
         <div ng-show="currentCheckPointLevel === checkPointLevelsCount">
             You already passed all of the check points!
+            <div class="achieved">
+                <a ui-sref="tabs.archieved({type: checkPointType})" class="button button-small button-block button-stable">See what you have achieved</a>
+            </div>
         </div>
         <div ng-show="currentCheckPointLevel < checkPointLevelsCount">
             <div class="info">
