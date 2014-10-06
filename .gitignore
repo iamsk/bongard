@@ -5,3 +5,5 @@ src/client/build
 src/client/.sass-cache
 src/client/mobile/bongard/platforms
 src/client/mobile/bongard/plugins
+src/client/www/js/template.js
+src/client/www/fonts
