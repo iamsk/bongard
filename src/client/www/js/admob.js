@@ -12,10 +12,10 @@
     window.plugins.AdMob.createBannerView();
 
     // prepare the interstitial
-    window.plugins.AdMob.createInterstitialView();
+    // window.plugins.AdMob.createInterstitialView();
 
     // somewhere else, show the interstital, not needed if set autoShow = true
-    window.plugins.AdMob.showInterstitialAd();
+    // window.plugins.AdMob.showInterstitialAd();
 }
 function initAd(){
     if ( window.plugins && window.plugins.AdMob ) {

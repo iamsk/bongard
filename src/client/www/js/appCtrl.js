@@ -12,7 +12,7 @@ define([
 
         init: function() {
             ionic.Platform.ready(function() {
-                window.StatusBar && window.StatusBar.hide();
+                // window.StatusBar && window.StatusBar.hide();
             });
             this.$.gameInfo = angular.fromJson(gameInfo);
             this.$.gameStatus = this._gameStatus = angular.fromJson(this.localStorageService.get('gameStatus')) || {};
