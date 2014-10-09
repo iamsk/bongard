@@ -12167,13 +12167,13 @@ body {
 /* line 5, ../sass/_home.scss */
 .home .button .title {
   font-size: 25px;
-  line-height: 28px;
+  line-height: 27px;
   text-transform: capitalize;
   margin-top: 12px;
 }
 /* line 11, ../sass/_home.scss */
 .home .button .description {
-  line-height: 30px;
+  line-height: 29px;
 }
 
 /* line 2, ../sass/_checkPoint.scss */

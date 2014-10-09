@@ -22,6 +22,8 @@ define([
     });
 
     require([
+        'directives/imagesContainer',
+
         './appCtrl',
         'text!./tabsTpl.html',
         'text!./aboutTpl.html',
@@ -34,6 +36,8 @@ define([
         './archieved/archievedCtrl',
         'text!./archieved/archievedTpl.html'
     ], function(
+        imagesContainer,
+
         appCtrl,
         tabsTpl,
         aboutTpl,
@@ -98,7 +102,7 @@ define([
                     }
                 });
             }
-        ]);
+        ]).directive(_.merge({}, imagesContainer));
 
         angular.bootstrap(document, ['bongard']);
     });

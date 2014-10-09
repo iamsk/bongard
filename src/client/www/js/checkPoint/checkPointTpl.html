@@ -21,7 +21,7 @@
                     You have <storng>{{leftChances}}</strong> chances left to continue.
                 </div>
             </div>
-            <div class="images-container">
+            <div class="images-container" bg-images-container="images">
                 <button class="button" ng-repeat="image in images" ng-click="(isClickable() || image.selected) && (image.selected = !image.selected)" ng-class="{selected: image.selected}">
                     <img ng-src="{{image.url}}" />
                 </button>

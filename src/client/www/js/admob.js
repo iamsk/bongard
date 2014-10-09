@@ -9,7 +9,7 @@
     initAd();
 
     // display a banner at startup
-    window.plugins.AdMob.createBannerView();
+    window.plugins && window.plugins.AdMob.createBannerView();
 
     // prepare the interstitial
     // window.plugins.AdMob.createInterstitialView();
@@ -43,8 +43,6 @@ function initAd(){
 
         registerAdEvents();
 
-    } else {
-        alert( 'admob plugin not ready' );
     }
 }
 // optional, in case respond to events
