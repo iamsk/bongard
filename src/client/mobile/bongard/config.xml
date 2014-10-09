@@ -9,7 +9,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <icon src="res/icon/ios/icon.png" platform="ios" />
+    <icon src="res/icon/ios/icon.png" />
 
     <platform name="ios">
         <splash src="res/screen/ios/Default~iphone.png" width="320" height="480" />
