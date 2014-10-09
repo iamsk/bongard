@@ -3,7 +3,7 @@ from json import load
 
 
 def tocsv():
-    BPs = load(open('test.json'))
+    BPs = load(open('all_bps.json'))
 
     writer = csv.writer(file('your.csv', 'wb'))
     writer.writerow(['Number', 'Image'])

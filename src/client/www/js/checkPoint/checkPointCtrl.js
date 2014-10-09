@@ -92,7 +92,7 @@ define([
                 } else {
                     this.$ionicPopup.alert({
                         title: 'Left Chances',
-                        template: 'You get only <strong>' + this.$.leftChances + '</strong> chances left for this step. Otherwise you have to see an ad. ^_^'
+                        template: 'You get only <strong>' + this.$.leftChances + '</strong> chances left for this level. Otherwise you have to see an ad. ^_^'
                     });
                 }
             }
@@ -102,7 +102,7 @@ define([
             if (this.$.currentCheckPointLevel === this._checkPointsData.checkPoints.length - 1) {
                 this.$ionicPopup.alert({
                     title: 'You Win',
-                    template: 'Congratulations! You already passed all of the tests and proved you have a really high IQ.'
+                    template: 'Congratulations! You already passed all of the tests in this section and proved you have a really high IQ.'
                 })
             }
             this._gameStatus[this.$.checkPointType] = ++this.$.currentCheckPointLevel;

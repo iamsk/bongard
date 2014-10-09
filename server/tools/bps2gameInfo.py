@@ -26,10 +26,12 @@ LEVELS = {
 
 def get_new_bps():
     new_bps = csv.reader(file('bps.csv', 'rb'))
-    bps_dict = {}
+    bps_dict = {'S': [], 'M': [], 'H': [], 'C': []}
     for bp in new_bps:
-        if bp[2] in ['S', 'M', 'H', 'C'] and bp[3]:
-            bps_dict[bp[0]] = bp[2]
+        if bp[2] in LEVELS.keys():
+            bps_dict[bp[2]].append((bp[1], int(bp[3])))
+    for level in LEVELS.keys():
+        bps_dict[level] = [bp[0] for bp in sorted(bps_dict[level], key=lambda x: x[1])]
     return bps_dict
 
 
@@ -62,18 +64,14 @@ tpl = {
 
 
 def run():
-    bps = load(open('test.json'))
+    old_bps = load(open('all_bps.json'))
+    old_bps_dict = {x['number']: x['author'] for x in old_bps}
     new_bps = get_new_bps()
-    for bp in bps:
-        if not bp['number'].isdigit():
-            continue
-        if bp['number'] in new_bps:
-            cp = get_check_point(bp['number'], bp['author'])
-            level = LEVELS[new_bps[bp['number']]]
-            tpl['checkPointTypes'][level]['checkPoints'].append(cp)
-    tpl['checkPointTypes'][2]['checkPoints'] = tpl['checkPointTypes'][3]['checkPoints'][25:]
-    for i in range(4):
-        tpl['checkPointTypes'][i]['checkPoints'] = tpl['checkPointTypes'][i]['checkPoints'][:20]
+    for level, bps in new_bps.items():
+        for number in bps:
+            author = old_bps_dict[number]
+            cp = get_check_point(number, author)
+            tpl['checkPointTypes'][LEVELS[level]]['checkPoints'].append(cp)
     dump(tpl, open('/Users/zhangbin/workspace/bongard/src/client/www/js/data/'
                    'gameInfo.json', 'w'))
 
