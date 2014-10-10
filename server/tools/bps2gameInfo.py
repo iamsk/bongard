@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+import os
 import csv
+import shutil
 from json import load, dump
 
 AUTHORS = {
@@ -64,6 +66,8 @@ tpl = {
 
 
 def run():
+    shutil.rmtree('/Users/zhangbin/workspace/bongard/src/client/www/image')
+    os.mkdir('/Users/zhangbin/workspace/bongard/src/client/www/image')
     old_bps = load(open('all_bps.json'))
     old_bps_dict = {x['number']: x['author'] for x in old_bps}
     new_bps = get_new_bps()
@@ -72,6 +76,9 @@ def run():
             author = old_bps_dict[number]
             cp = get_check_point(number, author)
             tpl['checkPointTypes'][LEVELS[level]]['checkPoints'].append(cp)
+            a = '/Users/zhangbin/workspace/bongard/server/images/components/%s' % number
+            b = '/Users/zhangbin/workspace/bongard/src/client/www/image/%s' % number
+            shutil.copytree(a, b)
     dump(tpl, open('/Users/zhangbin/workspace/bongard/src/client/www/js/data/'
                    'gameInfo.json', 'w'))
 
