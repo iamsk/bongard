@@ -14,20 +14,18 @@ define([
             this.$.settings.page = 'checkPoint';
             this.$.checkPointType = this.$stateParams.type;
 
-            this._gameInfo = angular.fromJson(gameInfo);
-            this._checkPointsData = _.find(this._gameInfo.checkPointTypes, {
+            this._checkPointsData = _.find(this.$.gameInfo.checkPointTypes, {
                 name: this.$.checkPointType
             });
 
-            this._gameStatus = angular.fromJson(this.localStorageService.get('gameStatus')) || {};
-
-            this.$.currentCheckPointLevel = parseInt(this.$stateParams.id || this._gameStatus[this.$.checkPointType] || 0);
+            this.$.currentCheckPointLevel = parseInt(this.$stateParams.id || this.$.gameStatus[this.$.checkPointType] || 0);
             this.$.checkPointLevelsCount = this._checkPointsData.checkPoints.length;
 
             this._initCurrentLevel();
         },
 
         _initCurrentLevel: function() {
+            this._selectedImages = null;
             var checkPoint = this._checkPointsData.checkPoints[this.$.currentCheckPointLevel];
             if (!checkPoint) {
                 return;
@@ -65,6 +63,8 @@ define([
                 _.forEach(this.$.images, function(image) {
                     if (_.indexOf(self._selectedImages, image) === -1) {
                         image.selected = false;
+                    } else {
+                        image.selected = true;
                     }
                 });
                 return;
@@ -122,8 +122,11 @@ define([
                     template: 'Congratulations! You already passed all of the tests in this section and proved you have a really high IQ.'
                 })
             }
-            this._gameStatus[this.$.checkPointType] = ++this.$.currentCheckPointLevel;
-            this.localStorageService.set('gameStatus', angular.toJson(this._gameStatus));
+            this.$.currentCheckPointLevel++;
+            if(this.$.gameStatus[this.$.checkPointType] < this.$.currentCheckPointLevel) {
+                this.$.gameStatus[this.$.checkPointType] = this.$.currentCheckPointLevel;
+                this.localStorageService.set('gameStatus', angular.toJson(this.$.gameStatus));
+            }
 
             this._initCurrentLevel();
         }
