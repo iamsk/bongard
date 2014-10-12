@@ -123,7 +123,7 @@ define([
                 })
             }
             this.$.currentCheckPointLevel++;
-            if(this.$.gameStatus[this.$.checkPointType] < this.$.currentCheckPointLevel) {
+            if(!this.$.gameStatus[this.$.checkPointType] || this.$.gameStatus[this.$.checkPointType] < this.$.currentCheckPointLevel) {
                 this.$.gameStatus[this.$.checkPointType] = this.$.currentCheckPointLevel;
                 this.localStorageService.set('gameStatus', angular.toJson(this.$.gameStatus));
             }

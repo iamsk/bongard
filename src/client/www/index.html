@@ -17,6 +17,22 @@
         </div>
         <!-- build:script bundle -->
         <!-- /build -->
+        <script type="text/javascript">
+            document.addEventListener('touchmove', function(e) {
+                var target = e.target;
+                var canMove = false;
+                while (target.parentNode) {
+                    if (target.tagName === 'ION-CONTENT') {
+                        canMove = true;
+                        break;
+                    }
+                    target = target.parentNode;
+                }
+                if (!canMove) {
+                    e.preventDefault();
+                }
+            }, false);
+        </script>
         <script type="text/javascript" src="./js/admob.js"></script>
         <script type="text/javascript" src="./bower_components/requirejs/require.js" data-main="./js/main"></script>
     </body>
