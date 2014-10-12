@@ -60,14 +60,31 @@ define([
         },
 
         showToolTip: function() {
+            if (this._selectedImages) {
+                var self = this;
+                _.forEach(this.$.images, function(image) {
+                    if (_.indexOf(self._selectedImages, image) === -1) {
+                        image.selected = false;
+                    }
+                });
+                return;
+            }
             _.forEach(this.$.images, function(image) {
                 image.selected = false;
             });
-            _.chain(this.$.images).filter(function(image) {
-                return image.id < 20;
-            }).slice(0, 2).forEach(function(image) {
+            var filterFun;
+            if (_.random(1) === 0) {
+                filterFun = function(image) {
+                    return image.id < 20;
+                }
+            } else {
+                filterFun = function(image) {
+                    return image.id > 20;
+                }
+            }
+            this._selectedImages = _.chain(this.$.images).filter(filterFun).shuffle().slice(0, 2).forEach(function(image) {
                 image.selected = true;
-            });
+            }).value();
         },
 
         canConfirm: function() {
