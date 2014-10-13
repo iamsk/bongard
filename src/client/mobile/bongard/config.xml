@@ -9,11 +9,38 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <icon src="res/icon/ios/icon.png" />
+    <platform name="android">
+        <icon src="res/icon/ios/icon-72.png" density="ldpi" />
+        <icon src="res/icon/ios/icon-72@2x.png" density="mdpi" />
+        <icon src="res/icon/ios/icon.png" density="hdpi" />
+        <icon src="res/icon/ios/icon@2x.png" density="xhdpi" />
+    </platform>
+    <platform name="ios">
+        <!-- iPhone / iPod Touch -->
+        <icon src="res/icon/ios/icon.png" width="57" height="57" />
+        <icon src="res/icon/ios/icon@2x.png" width="114" height="114" />
+        <!-- iPad -->
+        <icon src="res/icon/ios/icon-72.png" width="72" height="72" />
+        <icon src="res/icon/ios/icon-72@2x.png" width="144" height="144" />
+    </platform>
+    <preference name="Fullscreen" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="BackgroundColor" value="0xffffffff"/>
 
     <platform name="ios">
         <splash src="res/screen/ios/Default~iphone.png" width="320" height="480" />
         <splash src="res/screen/ios/Default@2x~iphone.png" width="640" height="960" />
         <splash src="res/screen/ios/Default-568h@2x~iphone.png" width="640" height="1136" />
+    </platform>
+    <platform name="android">
+        <splash src="res/screen/android/splash-land-hdpi.png" density="land-hdpi"/>
+        <splash src="res/screen/android/splash-land-ldpi.png" density="land-ldpi"/>
+        <splash src="res/screen/android/splash-land-mdpi.png" density="land-mdpi"/>
+        <splash src="res/screen/android/splash-land-xhdpi.png" density="land-xhdpi"/>
+
+        <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
+        <splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/>
+        <splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/>
+        <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/>
     </platform>
 </widget>
