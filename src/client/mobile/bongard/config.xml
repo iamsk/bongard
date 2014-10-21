@@ -10,10 +10,13 @@
     <content src="index.html" />
     <access origin="*" />
     <platform name="android">
-        <icon src="res/icon/ios/icon-72.png" density="ldpi" />
-        <icon src="res/icon/ios/icon-72@2x.png" density="mdpi" />
-        <icon src="res/icon/ios/icon.png" density="hdpi" />
-        <icon src="res/icon/ios/icon@2x.png" density="xhdpi" />
+        <icon src="res/icon/android/36.png" density="ldpi" />
+        <icon src="res/icon/android/48.png" density="mdpi" />
+        <icon src="res/icon/android/72.png" density="hdpi" />
+        <icon src="res/icon/android/96.png" density="xhdpi" />
+        <icon src="res/icon/android/144.png" density="xxhdpi" />
+        <icon src="res/icon/android/192.png" density="xxxhdpi" />
+        <icon src="res/icon/android/artwork.png" density="web" />
     </platform>
     <platform name="ios">
         <!-- iPhone / iPod Touch -->
@@ -38,8 +41,8 @@
         <splash src="res/screen/android/splash-land-mdpi.png" density="land-mdpi"/>
         <splash src="res/screen/android/splash-land-xhdpi.png" density="land-xhdpi"/>
 
-        <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
         <splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/>
+        <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
         <splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/>
         <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/>
     </platform>
