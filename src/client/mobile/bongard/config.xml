@@ -26,9 +26,10 @@
         <icon src="res/icon/ios/icon-72.png" width="72" height="72" />
         <icon src="res/icon/ios/icon-72@2x.png" width="144" height="144" />
     </platform>
-    <preference name="Fullscreen" value="true" />
+    <preference name="Fullscreen" value="false" />
     <preference name="Orientation" value="portrait" />
     <preference name="BackgroundColor" value="0xffffffff"/>
+    <preference name="SplashScreenDelay" value="10000" />
 
     <platform name="ios">
         <splash src="res/screen/ios/Default~iphone.png" width="320" height="480" />
