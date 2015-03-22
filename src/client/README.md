@@ -1,4 +1,4 @@
-# How to build mobile on iOS?
+# How to build mobile on iOS
 
 1. make sure cordova is installed by "npm install -g cordova"
 
