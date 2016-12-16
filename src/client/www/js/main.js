@@ -4,7 +4,7 @@ require.config({
 
         'lodash': '../bower_components/lodash/dist/lodash.min',
         'moment': '../bower_components/moment/min/moment.min',
-        'angular': '../bower_components/angular/angular',
+        'angular': '//cdn.staticfile.org/angular.js/1.2.26/angular',
         'angular.ui.router': '../bower_components/angular-ui-router/release/angular-ui-router.min',
         'angular.classy': './lib/classy',
         'restangular': '../bower_components/restangular/dist/restangular.min',

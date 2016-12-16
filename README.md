@@ -11,19 +11,19 @@ A Bongard problem is a kind of puzzle invented by the computer scientist Mikhail
 Demo: [http://bongard.iamsk.info/play/][1]
 
 ## Code structure and how to build this app on mobile phone
-[Data prepare part][2]
-[How to build this on iOS][3]
+* [Data prepare part][2]
+* [How to build this on iOS][3]
 
 ## Refs:
-[Research on the Bongard Problems][4]
-[Index of Bongard Problems][5]
-[Design your own Bongard problems!][6]
-[Things not allowed in Bongard Problems][7]
-[Bongard problem][8]
-[45 道 Bongard 问题：寻找图形分类的依据][9]
-[Bongard problems][10]
-[zendo][11]
-[alvarogonzalezsotillo/Bongard][12]
+* [Research on the Bongard Problems][4]
+* [Index of Bongard Problems][5]
+* [Design your own Bongard problems!][6]
+* [Things not allowed in Bongard Problems][7]
+* [Bongard problem][8]
+* [45 道 Bongard 问题：寻找图形分类的依据][9]
+* [Bongard problems][10]
+* [zendo][11]
+* [alvarogonzalezsotillo/Bongard][12]
 
 [1]:	http://bongard.iamsk.info/play/
 [2]:	server/README.md

@@ -1,4 +1,4 @@
- function onDomLoad() {
+ window.onDomLoad = function() {
         if(( /(ipad|iphone|ipod|android)/i.test(navigator.userAgent) )) {
             document.addEventListener('deviceready', onDeviceReady, false);
         } else {
