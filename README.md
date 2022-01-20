@@ -8,7 +8,7 @@ A Bongard problem is a kind of puzzle invented by the computer scientist Mikhail
   <img src="server/website/images/3.png" width="320px" height="480px">
 </p>
 
-Demo: [http://bongard.iamsk.info/play/][1]
+Demo: [http://bongard.wanggezhi.com/play/][1]
 
 ## Code structure and how to build this app on mobile phone
 * [Data prepare part][2]
