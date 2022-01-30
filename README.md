@@ -25,7 +25,7 @@ Demo: [http://bongard.wanggezhi.com/play/][1]
 * [zendo][11]
 * [alvarogonzalezsotillo/Bongard][12]
 
-[1]:	http://bongard.iamsk.info/play/
+[1]:	http://bongard.wanggezhi.com/play/
 [2]:	server/README.md
 [3]:	src/client/README.md
 [4]:	http://www.foundalis.com/res/diss_research.html
